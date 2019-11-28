@@ -309,7 +309,7 @@ public class Registro extends javax.swing.JFrame {
     
     
     void listar() {
-        String sql = "select * from persona";
+        String sql = "select * from registro";
         try {
             con = cn.getConnection();
             st = con.createStatement();
@@ -319,9 +319,12 @@ public class Registro extends javax.swing.JFrame {
 //            model=new DefaultTableModel(null,Titulos);   
             model = (DefaultTableModel) TablaDatos.getModel();
             while (rs.next()) {
-                persona[0] = rs.getInt("Id");
-                persona[1] = rs.getString("DNI");
-                persona[2] = rs.getString("Nombres");
+                persona[0] = rs.getInt("ID_REG");
+                persona[1] = rs.getString("HR_ENTRADA");
+                persona[2] = rs.getString("HR_SALIDA");
+                persona[0] = rs.getInt("FECHA");
+                persona[1] = rs.getString("ID_EST");
+                persona[2] = rs.getString("LUGAR");
                 model.addRow(persona);
             }
             TablaDatos.setModel(model);
@@ -332,18 +335,22 @@ public class Registro extends javax.swing.JFrame {
     }
 
     void Agregar() {
-        String dni = txtDNI.getText();
-        String nom = txtNom.getText();
+        String id = txtID.getText();
+        String ent = txtEnt.getText();
+        String sal = txtSal.getText();
+        String fec = txtFec.getText();
+        String idEst = txtIDest.getText();
+        String lugar = txtLugar.getText();
         try {
-            if (dni.equals("") || nom.equals("")) {
+            if (id.equals("") || ent.equals("") || sal.equals("") || fec.equals("") || idEst.equals("") || lugar.equals("") ) {
                 JOptionPane.showMessageDialog(null, "Debe Ingresar Datos");
                 limpiarTabla(model);               
             } else {
-                String sql = "insert into persona(DNI,Nombres) values('" + dni + "','" + nom + "')";
+                String sql = "insert into registro(ID_REG,HR_LLEGADA, HR_SALIDA,FECHA,ID_EST, LUGAR) values('" + id + "','" + ent + "','" + sal + "','" + fec + "','" + idEst + "','" + lugar + "')";
                 con = cn.getConnection();
                 st = con.createStatement();
                 st.executeUpdate(sql);
-                JOptionPane.showMessageDialog(null, "Usuario Registrado con Exito");
+                JOptionPane.showMessageDialog(null, "Registro Registrado con Exito");
                 limpiarTabla(model);
                 
             }
@@ -355,15 +362,19 @@ public class Registro extends javax.swing.JFrame {
     }
 
     void Modificar() {
-        String dni = txtDNI.getText();
-        String nom = txtNom.getText();
-        String sql = "update persona set DNI='" + dni + "',Nombres='" + nom + "' where Id=" + id;
+        String id = txtID.getText();
+        String ent = txtEnt.getText();
+        String sal = txtSal.getText();
+        String fec = txtFec.getText();
+        String idEst = txtIDest.getText();
+        String lugar = txtLugar.getText();
+        String sql = "update registro set ID_REG='" + id + "',HR_ENTRADA='" + ent + "',HR_SALIDA='" + sal + "',FECHA='" + fec + "',ID_EST='" + idEst + "',LUGAR='" + lugar + "' where ID_REG=" + id;
         try {
-            if (dni != null || nom != null) {
+            if (id != null || ent != null || sal != null || fec != null || idEst != null || lugar != null) {
                 con = cn.getConnection();
                 st = con.createStatement();
                 st.executeUpdate(sql);
-                JOptionPane.showMessageDialog(null, "Usuario Modificado");
+                JOptionPane.showMessageDialog(null, "Registro Modificado");
                 limpiarTabla(model);
                 
             } else {
@@ -376,16 +387,16 @@ public class Registro extends javax.swing.JFrame {
     }
 
     void Eliminar() {
-        String sql = "delete from persona where Id=" + id;        
+        String sql = "delete from registro where ID_REG=" + id;        
         int fila = TablaDatos.getSelectedRow();
         if (fila < 0) {
-            JOptionPane.showMessageDialog(null,"Usuario no Seleccionado");
+            JOptionPane.showMessageDialog(null,"Registro no Seleccionado");
         } else {
                 try {
                     con = cn.getConnection();
                     st = con.createStatement();
                     st.executeUpdate(sql);
-                    JOptionPane.showMessageDialog(null, "Usuario Eliminado");
+                    JOptionPane.showMessageDialog(null, "Registro Eliminado");
                     limpiarTabla(model);
                     
                 } catch (Exception e) {
@@ -396,10 +407,13 @@ public class Registro extends javax.swing.JFrame {
     }
 
     void nuevo() {
-        txtId.setText("");
-        txtDNI.setText("");
-        txtNom.setText("");
-        txtDNI.requestFocus();
+        txtID.setText("");
+        txtEnt.setText("");
+        txtSal.setText("");
+        txtFec.setText("");
+        txtIDest.setText("");
+        txtLugar.setText("");
+        txtID.requestFocus();
     }
 
     void limpiarTabla(DefaultTableModel model) {

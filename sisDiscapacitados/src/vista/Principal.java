@@ -149,7 +149,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-         Login log = new Login();
+         Login2 log = new Login2();
         log.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed

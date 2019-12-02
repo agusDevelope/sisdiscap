@@ -56,10 +56,10 @@ public class Discapacitados extends javax.swing.JFrame {
         txtCard = new javax.swing.JTextField();
         txtFecha = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnModif = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnNew = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaDatos = new javax.swing.JTable();
@@ -156,31 +156,31 @@ public class Discapacitados extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("OP"));
 
-        jButton2.setText("Agregar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAdd.setText("Agregar");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAddActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Modificar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnModif.setText("Modificar");
+        btnModif.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnModifActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Eliminar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Nuevo");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnNew.setText("Nuevo");
+        btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnNewActionPerformed(evt);
             }
         });
 
@@ -190,23 +190,23 @@ public class Discapacitados extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton2)
+                .addComponent(btnAdd)
                 .addGap(133, 133, 133)
-                .addComponent(jButton3)
+                .addComponent(btnModif)
                 .addGap(126, 126, 126)
-                .addComponent(jButton4)
+                .addComponent(btnEliminar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
-                .addComponent(jButton5))
+                .addComponent(btnNew))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(btnAdd)
+                    .addComponent(btnModif)
+                    .addComponent(btnEliminar)
+                    .addComponent(btnNew))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -226,17 +226,15 @@ public class Discapacitados extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jButton1.setText("Regresar");
@@ -252,23 +250,24 @@ public class Discapacitados extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(283, 283, 283)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(62, 62, 62)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(283, 283, 283)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 28, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(24, 24, 24))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,9 +280,9 @@ public class Discapacitados extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
                 .addComponent(jButton1)
-                .addGap(35, 35, 35))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -300,49 +299,52 @@ public class Discapacitados extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDireccionActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         Agregar(); 
         listar();
         nuevo();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnAddActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifActionPerformed
         // TODO add your handling code here:
         Modificar(); 
         listar();
         nuevo();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnModifActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
          Eliminar();
         listar();
         nuevo();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
         // TODO add your handling code here:
         nuevo();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnNewActionPerformed
     
     
     
     void listar() {
-        String sql = "select * from persona";
+        String sql = "select * from discapacitado";
         try {
             con = cn.getConnection();
             st = con.createStatement();
             rs = st.executeQuery(sql);
-            Object[] persona = new Object[3];
+            Object[] discapacitado = new Object[6];
 //            String[] Titulos={"ID","DNI","NOMBRES"};         
 //            model=new DefaultTableModel(null,Titulos);   
             model = (DefaultTableModel) TablaDatos.getModel();
             while (rs.next()) {
-                persona[0] = rs.getInt("Id");
-                persona[1] = rs.getString("DNI");
-                persona[2] = rs.getString("Nombres");
-                model.addRow(persona);
+                discapacitado[0] = rs.getInt("PLACA");
+                discapacitado[1] = rs.getString("NOMBRE");
+                discapacitado[2] = rs.getString("DIRECCION");
+                discapacitado[3] = rs.getInt("TELEFONO");
+                discapacitado[4] = rs.getString("NUM_TARJETA");
+                discapacitado[5] = rs.getString("FECHA");
+                model.addRow(discapacitado);
             }
             TablaDatos.setModel(model);
 
@@ -352,14 +354,18 @@ public class Discapacitados extends javax.swing.JFrame {
     }
 
     void Agregar() {
-        String dni = txtDNI.getText();
-        String nom = txtNom.getText();
+        String placa = txtPlaca.getText();
+        String nom = txtNombre.getText();
+        String dir = txtDireccion.getText();
+        String tel = txtTel.getText();
+        String tarjeta = txtCard.getText();
+        String fec = txtFecha.getText();
         try {
-            if (dni.equals("") || nom.equals("")) {
+            if (placa.equals("") || nom.equals("")|| dir.equals("") || tel.equals("")||tarjeta.equals("") || fec.equals("")) {
                 JOptionPane.showMessageDialog(null, "Debe Ingresar Datos");
                 limpiarTabla(model);               
             } else {
-                String sql = "insert into persona(DNI,Nombres) values('" + dni + "','" + nom + "')";
+                String sql = "insert into persona(PLACA,NOMBRE,DIRECCIONN,TELEFONO,NUM_TARJETA,FECHA) values('" + placa + "','" + nom + "','" + dir + "','" + tel + "','" + tarjeta + "','" + fec + "')";
                 con = cn.getConnection();
                 st = con.createStatement();
                 st.executeUpdate(sql);
@@ -375,11 +381,16 @@ public class Discapacitados extends javax.swing.JFrame {
     }
 
     void Modificar() {
-        String dni = txtDNI.getText();
-        String nom = txtNom.getText();
-        String sql = "update persona set DNI='" + dni + "',Nombres='" + nom + "' where Id=" + id;
+        String placa = txtPlaca.getText();
+        String nom = txtNombre.getText();
+        String dir = txtDireccion.getText();
+        String tel = txtNombre.getText();
+        String tarjeta = txtPlaca.getText();
+        String fecha = txtNombre.getText();
+        String sql = "update discapacitados set PLACA='" +placa + "',Nombre='" + nom + "',DIRECCION='" + dir+ "',TELEFONO='" + tel + "',NUM_TARJETA='" + tarjeta
+                + "',FECHA='" + fecha + "' where Id=" + id;
         try {
-            if (dni != null || nom != null) {
+            if (placa != null || nom != null || dir != null || tel != null || tarjeta != null || fecha != null) {
                 con = cn.getConnection();
                 st = con.createStatement();
                 st.executeUpdate(sql);
@@ -396,7 +407,7 @@ public class Discapacitados extends javax.swing.JFrame {
     }
 
     void Eliminar() {
-        String sql = "delete from persona where Id=" + id;        
+        String sql = "delete from discapacitados where PLACA=" + txtPlaca;        
         int fila = TablaDatos.getSelectedRow();
         if (fila < 0) {
             JOptionPane.showMessageDialog(null,"Usuario no Seleccionado");
@@ -416,10 +427,13 @@ public class Discapacitados extends javax.swing.JFrame {
     }
 
     void nuevo() {
-        txtId.setText("");
-        txtDNI.setText("");
-        txtNom.setText("");
-        txtDNI.requestFocus();
+        txtPlaca.setText("");
+        txtNombre.setText("");
+        txtDireccion.setText("");
+         txtTel.setText("");
+          txtCard.setText("");
+           txtFecha.setText("");
+        txtPlaca.requestFocus();
     }
 
     void limpiarTabla(DefaultTableModel model) {
@@ -470,11 +484,11 @@ public class Discapacitados extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TablaDatos;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnModif;
+    private javax.swing.JButton btnNew;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

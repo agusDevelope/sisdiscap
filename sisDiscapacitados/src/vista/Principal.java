@@ -20,6 +20,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("../imagenes/logo.png")).getImage());
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -149,9 +150,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-         Login2 log = new Login2();
-        log.setVisible(true);
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     

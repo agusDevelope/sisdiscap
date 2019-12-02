@@ -5,6 +5,7 @@
  */
 package vista;
 
+import com.mysql.jdbc.Connection;
 import javax.swing.ImageIcon;
 import config.Conexion;
 import java.sql.*;
@@ -18,22 +19,23 @@ import javax.swing.table.DefaultTableModel;
 public class Login2 extends javax.swing.JFrame {
     Conexion cn = new Conexion();
     Connection con;
-    DefaultTableModel model;
     Statement st;
     ResultSet rs;
-    int id = 0;
+
     /**
      * Creates new form Login2
      */
     public Login2() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("../imagenes/logo.png")).getImage());
+        setLocationRelativeTo(null);
     }
     
     public void validarAcceso(){
         int resultado = 0;
         
         try {
+            JOptionPane.showMessageDialog(null, "Bienvenido " + txtNombre.getText());
             String usuario = txtNombre.getText();
             String pass = String.valueOf(txtPass.getPassword());
             
@@ -54,7 +56,7 @@ public class Login2 extends javax.swing.JFrame {
                 }
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error el Acceso, Vuelva a Intentarlo" + e.getMessage());
+            //JOptionPane.showMessageDialog(null, "Error el Acceso, Vuelva a Intentarlo" + e.getMessage());
         }
     }
 
@@ -78,7 +80,7 @@ public class Login2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -91,9 +93,11 @@ public class Login2 extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuario:");
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Contraseña:");
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +107,7 @@ public class Login2 extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Sistema Discapacitados");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/wheelchair (2).png"))); // NOI18N
@@ -121,11 +126,7 @@ public class Login2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(74, 74, 74)
-                                .addComponent(jLabel4))))
+                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(90, 90, 90)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -137,15 +138,19 @@ public class Login2 extends javax.swing.JFrame {
                                 .addGap(21, 21, 21)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(41, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(122, 122, 122))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel1)
-                .addGap(37, 37, 37)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel4)
-                .addGap(29, 29, 29)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -184,11 +189,10 @@ public class Login2 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        Principal Main = new Principal();
+       Principal Main = new Principal();
         Main.setVisible(true);
         this.dispose();
-
+      validarAcceso();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed

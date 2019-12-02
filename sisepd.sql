@@ -3,10 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2019 a las 07:57:09
+-- Tiempo de generación: 02-12-2019 a las 02:53:42
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
-CREATE database sisepd;
+create database sisepd;
 use sisepd;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,6 +34,13 @@ CREATE TABLE `admin` (
   `NOMBRE` varchar(100) CHARACTER SET utf32 COLLATE utf32_spanish2_ci NOT NULL,
   `PASS` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `admin`
+--
+
+INSERT INTO `admin` (`ID`, `NOMBRE`, `PASS`) VALUES
+(1, 'root', 0x726f6f74);
 
 -- --------------------------------------------------------
 
@@ -115,7 +122,7 @@ ALTER TABLE `registro`
 -- AUTO_INCREMENT de la tabla `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `estacionamiento`

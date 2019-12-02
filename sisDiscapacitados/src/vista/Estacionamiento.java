@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 public class Estacionamiento extends javax.swing.JFrame {
       
     
-      Conexion cn = new Conexion();
+    Conexion cn = new Conexion();
     Connection con;
     DefaultTableModel model;
     Statement st;
